@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+          <div class="custom-file">
+              <input type="file" class="custom-file-input" id="customFile">
+              <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+            <div style="padding-top:20px">
+                <button class="btn btn-success">Upload</button>
+                <button class="btn btn-primary" (click)="parseResume($event)">Parse</button>
+                <button class="btn btn-danger">Cancel</button>
+              </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>    
+</div><br><br>
+<div class="container" *ngIf="show">
+    <div class="row" >
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <table class="table table-stripped table-bordered">
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Mobile</th>
+                  <th>Qualification</th>
+                  <th>Experience</th>
+                  <th>Primary Skills</th>
+                  <th>Secondary Skills</th>
+                  <th>Resume Posted Date</th>
+                </tr>
+                <tr *ngFor="let data of rowData">
+                  <td>{{data.name}}</td>
+                  <td>{{data.email}}</td>
+                  <td>{{data.mobile}}</td>
+                  <td>{{data.qualification}}</td>
+                  <td>{{data.experience}}</td>
+                  <td>{{data.primarySkill}}</td>
+                  <td>{{data.secondarySkill}}</td>    
+                  <td>{{data.resumePostedDate}}</td>
+                </tr>
+                </table>          
+
+        </div>
+        <div class="col-md-1"></div>
+
+    </div>
+</div>
+
+
